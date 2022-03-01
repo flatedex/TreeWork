@@ -10,15 +10,12 @@ namespace FirstLab
             int num = 0;
             while (true)
             {
-
                 if (Int32.TryParse(Console.ReadLine(), out num))
                 {
                     break;
                 }
-
                 Console.WriteLine("Unwanted number, try again");
             }
-
             return num;
         }
         public static int GetNumber(int a, int b)
@@ -51,9 +48,9 @@ namespace FirstLab
         public static void KeyboardInput(Tree tree, List<int> temp) // Create list before random for saving inputs
         {
             Console.WriteLine("How many nodes do you want to add?");
-            int count = GetNumber();
+            int counter = GetNumber();
             int node = 0;
-            for (int i = 0; i <= count - 1; i++)
+            for (int i = 0; i <= counter - 1; i++)
             {
                 Console.WriteLine($"Enter node {i + 1} key");
                 node = GetNumber();
@@ -64,8 +61,8 @@ namespace FirstLab
         public static void RandomInput(Tree tree, List<int> temp) // Create list before random for saving inputs
         {
 
-            const int RIGHT = 0;
-            const int LEFT = 99;
+            const int RIGHT = 99;
+            const int LEFT = 0;
 
             Console.WriteLine("How many nodes do you want to add?");
             int counter = GetNumber();

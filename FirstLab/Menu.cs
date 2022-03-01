@@ -6,17 +6,18 @@ namespace FirstLab
 {
     public enum MenuChoices
     {
-        EXIT,
         KEYBOARD,
-        FILES,
         RANDOM,
+        FILES,
+        EXIT
     }
     public enum TreeInterface
     {
         ADD,
         DELETE,
         PRINT,
-        SAVE
+        SAVE,
+        EXIT
     }
     public enum GAP
     {
@@ -33,31 +34,39 @@ namespace FirstLab
         public static void AskForInput()
         {
             Console.WriteLine("How you would like to fill the tree?");
-            Console.WriteLine("0 - Exit | 1 - From keyboard | 2 - Random filling | 3 - From file");
+            Console.WriteLine("0 - From keyboard | 1 - Random filling | 2 - From file | 3 - Exit");
             Console.Write("Your choice: ");
         }
-        public static void AskForTree(Tree tree)
+        public static void AskForTree(Tree tree, List<Int32> vs)
         {
-            Console.WriteLine("What you would like to do?");
-            Console.WriteLine("0 - Add more nodes | 1 - Delete a node | 2 - Print the tree | 3 - Save data to file");
-            TreeInterface choice = (TreeInterface)Input.GetNumber((Int32)TreeInterface.ADD, (Int32)TreeInterface.SAVE);
-            switch (choice)
+            bool toExit = false;
+            do
             {
-                case TreeInterface.ADD:
-                    Console.WriteLine();
-                    break;
-                case TreeInterface.DELETE:
-                    break;
-                case TreeInterface.PRINT:
-                    if(!Tree.NullCheck(tree)) PrintTree(tree.root, (Int32)GAP.GAP);
-                    else Console.WriteLine("The tree is empty");
-                    break;
-                case TreeInterface.SAVE:
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(choice), choice, null);
-            }
-
+                Console.WriteLine("What you would like to do?");
+                Console.WriteLine("0 - Add more nodes | 1 - Delete a node | 2 - Print the tree | 3 - Save data to file | 4 - Exit");
+                TreeInterface choice = (TreeInterface)Input.GetNumber((Int32)TreeInterface.ADD, (Int32)TreeInterface.SAVE);
+                switch (choice)
+                {
+                    case TreeInterface.ADD:
+                        Input.KeyboardInput(tree, vs);
+                        break;
+                    case TreeInterface.DELETE:
+                        Console.WriteLine("Enter the wanted value to delete");
+                        tree.DeleteNode(Input.GetNumber());
+                        break;
+                    case TreeInterface.PRINT:
+                        if (!Tree.NullCheck(tree)) PrintTree(tree.root, (Int32)GAP.GAP);
+                        else Console.WriteLine("The tree is empty");
+                        break;
+                    case TreeInterface.SAVE:
+                        break;
+                    case TreeInterface.EXIT:
+                        toExit = true;
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException(nameof(choice), choice, null);
+                }
+            }while (!toExit);
         }
         public static void PrintTree(Node root, int n)
         {
@@ -103,7 +112,7 @@ namespace FirstLab
                 }
                 if (inputChoice != MenuChoices.EXIT)
                 {
-                    Menu.AskForTree(tree);
+                    Menu.AskForTree(tree, vs);
                 }
 
             } while (!toExit); 

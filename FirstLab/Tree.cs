@@ -387,7 +387,7 @@ public class Tree
             }
             else
             {
-                Console.WriteLine($"\nNode {value} are not exist");
+                Console.WriteLine($"\nNode {value} is not existing");
             }
             if (this.root != null)
             {
