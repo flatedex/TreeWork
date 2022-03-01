@@ -11,7 +11,7 @@ public class Node
         this.left = this.right = this.parent = null;
     }
 }
-class Tree
+public class Tree
 {
     public Node root;
 
@@ -23,7 +23,10 @@ class Tree
     {
         return this.root;
     }
-    
+    public static bool NullCheck(Tree tree)
+    {
+        return (tree.root == null) ? true : false;
+    }
     public static Node RightRotate(Node x)
     {
         Node y = x.left;

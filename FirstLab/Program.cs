@@ -71,28 +71,7 @@ namespace FirstLab
         
         static void Main()
         {
-            Menu.Greeting();
-            Menu.AskForInput();
-
-            Console.WriteLine();
-
-            Tree tree = new Tree();
-            tree.InsertNode(9);
-            tree.InsertNode(3);
-            tree.InsertNode(7);
-            tree.InsertNode(20);
-            tree.InsertNode(13);
-            tree.InsertNode(32);
-            tree.InsertNode(1);
-            tree.InsertNode(4);
-
-            Menu.PrintTree(tree.GetRoot(), 1);
-
-            Console.WriteLine("____________________________");
-
-            tree.DeleteNode(3);
-
-            Menu.PrintTree(tree.GetRoot(), 1);
+            Menu.UserInterface();
         }
     }
 }
