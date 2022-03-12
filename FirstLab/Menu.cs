@@ -16,8 +16,14 @@ namespace FirstLab
         ADD,
         DELETE,
         PRINT,
-        SAVE,
+        SAVEDATA,
+        SAVERESULT,
         EXIT
+    }
+    public enum DualChoice
+    {
+        YES,
+        NO
     }
     public enum GAP
     {
@@ -37,36 +43,62 @@ namespace FirstLab
             Console.WriteLine("0 - From keyboard | 1 - Random filling | 2 - From file | 3 - Exit");
             Console.Write("Your choice: ");
         }
-        public static void AskForTree(Tree tree, List<Int32> vs)
+        public static void AskForTreeAction()
+        {
+            Console.WriteLine("What you would like to do?");
+            Console.WriteLine("0 - Add more nodes | 1 - Delete a node | 2 - Print the tree | 3 - Save data to file | 4 - Save result to file | 5 - Exit");
+            Console.Write("Your choice: ");
+        }
+        public static void TreeInterface(Tree tree, List<Int32> vs)
         {
             bool toExit = false;
             do
             {
-                Console.WriteLine("What you would like to do?");
-                Console.WriteLine("0 - Add more nodes | 1 - Delete a node | 2 - Print the tree | 3 - Save data to file | 4 - Exit");
-                TreeInterface choice = (TreeInterface)Input.GetNumber((Int32)TreeInterface.ADD, (Int32)TreeInterface.SAVE);
+                AskForTreeAction();
+                TreeInterface choice = (TreeInterface)Input.GetNumber((Int32)FirstLab.TreeInterface.ADD, (Int32)FirstLab.TreeInterface.EXIT);
                 switch (choice)
                 {
-                    case TreeInterface.ADD:
+                    case FirstLab.TreeInterface.ADD:
                         Input.KeyboardInput(tree, vs);
                         break;
-                    case TreeInterface.DELETE:
+                    case FirstLab.TreeInterface.DELETE:
                         Console.WriteLine("Enter the wanted value to delete");
                         tree.DeleteNode(Input.GetNumber());
                         break;
-                    case TreeInterface.PRINT:
+                    case FirstLab.TreeInterface.PRINT:
                         if (!Tree.NullCheck(tree)) PrintTree(tree.root, (Int32)GAP.GAP);
                         else Console.WriteLine("The tree is empty");
                         break;
-                    case TreeInterface.SAVE:
+                    case FirstLab.TreeInterface.SAVEDATA:
+                        FileWork.SaveInput(vs);
+                        //
                         break;
-                    case TreeInterface.EXIT:
+                    case FirstLab.TreeInterface.SAVERESULT:
+                        FileWork.SaveResult(tree.root);
+                        break;
+                    case FirstLab.TreeInterface.EXIT:
                         toExit = true;
                         break;
                     default:
                         throw new ArgumentOutOfRangeException(nameof(choice), choice, null);
                 }
             }while (!toExit);
+        }
+
+        public static Boolean AskForRewriting()
+        {
+            Console.WriteLine("File is already exist, do you want to rewrite it?");
+            Console.WriteLine("0 - Yes | 1 - No");
+            DualChoice choice = (DualChoice)Input.GetNumber((Int32)DualChoice.YES, (Int32)DualChoice.NO);
+            switch(choice)
+            {
+                case DualChoice.YES:
+                    return true;
+                case DualChoice.NO:
+                    return false;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(choice), choice, null);
+            }
         }
         public static void PrintTree(Node root, int n)
         {
@@ -99,6 +131,7 @@ namespace FirstLab
                         Input.KeyboardInput(tree, vs);
                         break;
                     case MenuChoices.FILES:
+                        do {} while (!FileWork.GetFromFile(tree, vs));
                         break;
                     case MenuChoices.RANDOM:
                         Input.RandomInput(tree, vs);
@@ -112,7 +145,7 @@ namespace FirstLab
                 }
                 if (inputChoice != MenuChoices.EXIT)
                 {
-                    Menu.AskForTree(tree, vs);
+                    Menu.TreeInterface(tree, vs);
                 }
 
             } while (!toExit); 
