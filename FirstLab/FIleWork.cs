@@ -63,13 +63,22 @@ namespace FirstLab
             }
             catch
             {
-                Boolean rewrite = Menu.AskForRewriting();
-                if (rewrite)
+                if (File.Exists(path))
                 {
-                    fStream = new FileStream(path, FileMode.Truncate);
+                    Boolean rewrite = Menu.AskForRewriting();
+                    if (rewrite)
+                    {
+                        File.Delete(path);
+                        fStream = new FileStream(path, FileMode.CreateNew);
+                    }
+                    else
+                    {
+                        CreateFile();
+                    }
                 }
                 else
                 {
+                    Console.WriteLine("Incorrect file or invalid file name");
                     CreateFile();
                 }
             }
@@ -91,7 +100,7 @@ namespace FirstLab
             {
                 text += item.ToString() + " ";
             }
-            File.WriteAllText(path, text);
+            File.WriteAllText(path, "Breadth-first output: " + text);
         }
         public static void PreOrder(Node root, String path, List<Int32> toFile) //breadth-first output to file
         {
