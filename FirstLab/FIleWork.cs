@@ -55,34 +55,41 @@ namespace FirstLab
         }
         public static String CreateFile()
         {
-            String path = GetPath();
-            FileStream fStream = null;
-            try
+            String path = "";
+            Boolean isSucced = false;
+            while (!isSucced)
             {
-                fStream = new FileStream(path, FileMode.CreateNew);
-            }
-            catch
-            {
-                if (File.Exists(path))
+                path = GetPath();
+                FileStream fStream = null;
+                try
                 {
-                    Boolean rewrite = Menu.AskForRewriting();
-                    if (rewrite)
+                    fStream = new FileStream(path, FileMode.CreateNew);
+                    isSucced = true;
+                }
+                catch
+                {
+                    if (File.Exists(path))
                     {
-                        File.Delete(path);
-                        fStream = new FileStream(path, FileMode.CreateNew);
+                        Boolean rewrite = Menu.AskForRewriting();
+                        if (rewrite)
+                        {
+                            File.Delete(path);
+                            fStream = new FileStream(path, FileMode.CreateNew);
+                            isSucced = true;
+                        }
+                        else
+                        {
+                            isSucced = false;
+                        }
                     }
                     else
                     {
-                        CreateFile();
+                        Console.WriteLine("Incorrect file or invalid file name");
+                        isSucced = false;
                     }
                 }
-                else
-                {
-                    Console.WriteLine("Incorrect file or invalid file name");
-                    CreateFile();
-                }
+                if (fStream != null) try { fStream.Close(); } catch (Exception) { Console.WriteLine("Stream not closed!"); isSucced = false; }
             }
-            fStream.Close();
             return path;
         }
         public static void SaveInput(List<Int32> list)
