@@ -101,7 +101,7 @@ namespace FirstLab
         {
             String path = CreateFile();
             List<Int32> toFile = new List<Int32>();
-            PreOrder(root, path, toFile);
+            PreOrder(root, toFile);
             String text = "";
             foreach (Int32 item in toFile)
             {
@@ -109,13 +109,13 @@ namespace FirstLab
             }
             File.WriteAllText(path, "Breadth-first output: " + text);
         }
-        public static void PreOrder(Node root, String path, List<Int32> toFile) //breadth-first output to file
+        public static void PreOrder(Node root, List<Int32> toFile) //breadth-first output to file
         {
             if (root != null)
             {
                 toFile.Add(root.key);
-                PreOrder(root.left, path, toFile);
-                PreOrder(root.right, path, toFile);
+                PreOrder(root.left, toFile);
+                PreOrder(root.right, toFile);
             }
         }
     }
