@@ -50,6 +50,7 @@ namespace FirstLabUTests
         [TestMethod]
         public void TestMethod3()
         {
+            List<Int32> data = new List<Int32> { };
         }
     }
 }
