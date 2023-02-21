@@ -1,0 +1,32 @@
+C:\Users\koler\source\repos\FirstLab\FirstLab\bin\Debug\net5.0\FirstLab.exe
+C:\Users\koler\source\repos\FirstLab\FirstLab\bin\Debug\net5.0\FirstLab.deps.json
+C:\Users\koler\source\repos\FirstLab\FirstLab\bin\Debug\net5.0\FirstLab.runtimeconfig.json
+C:\Users\koler\source\repos\FirstLab\FirstLab\bin\Debug\net5.0\FirstLab.runtimeconfig.dev.json
+C:\Users\koler\source\repos\FirstLab\FirstLab\bin\Debug\net5.0\FirstLab.dll
+C:\Users\koler\source\repos\FirstLab\FirstLab\bin\Debug\net5.0\ref\FirstLab.dll
+C:\Users\koler\source\repos\FirstLab\FirstLab\bin\Debug\net5.0\FirstLab.pdb
+C:\Users\koler\source\repos\FirstLab\FirstLab\obj\Debug\net5.0\FirstLab.csprojAssemblyReference.cache
+C:\Users\koler\source\repos\FirstLab\FirstLab\obj\Debug\net5.0\FirstLab.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\koler\source\repos\FirstLab\FirstLab\obj\Debug\net5.0\FirstLab.AssemblyInfoInputs.cache
+C:\Users\koler\source\repos\FirstLab\FirstLab\obj\Debug\net5.0\FirstLab.AssemblyInfo.cs
+C:\Users\koler\source\repos\FirstLab\FirstLab\obj\Debug\net5.0\FirstLab.csproj.CoreCompileInputs.cache
+C:\Users\koler\source\repos\FirstLab\FirstLab\obj\Debug\net5.0\FirstLab.dll
+C:\Users\koler\source\repos\FirstLab\FirstLab\obj\Debug\net5.0\ref\FirstLab.dll
+C:\Users\koler\source\repos\FirstLab\FirstLab\obj\Debug\net5.0\FirstLab.pdb
+C:\Users\koler\source\repos\FirstLab\FirstLab\obj\Debug\net5.0\FirstLab.genruntimeconfig.cache
+F:\SPIST\my dear trash 2-2\DoSS\FirstLab\FirstLab\bin\Debug\net5.0\FirstLab.exe
+F:\SPIST\my dear trash 2-2\DoSS\FirstLab\FirstLab\bin\Debug\net5.0\FirstLab.deps.json
+F:\SPIST\my dear trash 2-2\DoSS\FirstLab\FirstLab\bin\Debug\net5.0\FirstLab.runtimeconfig.json
+F:\SPIST\my dear trash 2-2\DoSS\FirstLab\FirstLab\bin\Debug\net5.0\FirstLab.runtimeconfig.dev.json
+F:\SPIST\my dear trash 2-2\DoSS\FirstLab\FirstLab\bin\Debug\net5.0\FirstLab.dll
+F:\SPIST\my dear trash 2-2\DoSS\FirstLab\FirstLab\bin\Debug\net5.0\FirstLab.pdb
+F:\SPIST\my dear trash 2-2\DoSS\FirstLab\FirstLab\obj\Debug\net5.0\FirstLab.csproj.AssemblyReference.cache
+F:\SPIST\my dear trash 2-2\DoSS\FirstLab\FirstLab\obj\Debug\net5.0\FirstLab.GeneratedMSBuildEditorConfig.editorconfig
+F:\SPIST\my dear trash 2-2\DoSS\FirstLab\FirstLab\obj\Debug\net5.0\FirstLab.AssemblyInfoInputs.cache
+F:\SPIST\my dear trash 2-2\DoSS\FirstLab\FirstLab\obj\Debug\net5.0\FirstLab.AssemblyInfo.cs
+F:\SPIST\my dear trash 2-2\DoSS\FirstLab\FirstLab\obj\Debug\net5.0\FirstLab.csproj.CoreCompileInputs.cache
+F:\SPIST\my dear trash 2-2\DoSS\FirstLab\FirstLab\obj\Debug\net5.0\FirstLab.dll
+F:\SPIST\my dear trash 2-2\DoSS\FirstLab\FirstLab\obj\Debug\net5.0\ref\FirstLab.dll
+F:\SPIST\my dear trash 2-2\DoSS\FirstLab\FirstLab\obj\Debug\net5.0\FirstLab.pdb
+F:\SPIST\my dear trash 2-2\DoSS\FirstLab\FirstLab\obj\Debug\net5.0\FirstLab.genruntimeconfig.cache
+F:\SPIST\my dear trash 2-2\DoSS\FirstLab\FirstLab\obj\Debug\net5.0\refint\FirstLab.dll
